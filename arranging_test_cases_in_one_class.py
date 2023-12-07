@@ -59,7 +59,7 @@ class TestCase(object):
         result = asyncio_billiard_task_complete.proess_results(keywords)
         assert result == expected
     
- # test case of fetch suggestions   
+    # test case of fetch suggestions   
     @pytest.mark.parametrize("keywords, expected", [
     (
         "python", 
@@ -72,13 +72,13 @@ class TestCase(object):
         result = await asyncio_billiard_task_complete.fetch_suggestions(keywords)
         assert result == expected
 
-# test case of comond line in python 
+    # test case of comond line in python 
     def test_os_system(self):
         command = "python3 /home/ijaz/Documents/LinkedMatrix/CompleteAsyncioBilliardTask/asyncio_billiard_task_complete.py saad iphron"
         result = os.system(command)
         assert result == 0  
 
-# Test case for check Misspelled
+    # Test case for check Misspelled
     def test_check_misspelled1(self):
         result = asyncio_billiard_task_complete.check_misspelled("python", ["python", "pyhton", "pyth"])
         assert result["misspelled"] == False 
